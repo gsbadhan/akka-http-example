@@ -15,7 +15,8 @@ object Configurations {
   log.info(s"actors configs ${actorConf}");
   val combineAllConfig = actorConf.withFallback(applicationConfig);
   val config = ConfigFactory.load(combineAllConfig);
-
+  
+  val APP_NAME:String = config.getString("application.name")
   val HTTP_IP: String = config.getString("application.httpserver.ip")
   val HTTP_PORT: Int = config.getInt("application.httpserver.port")
   val HTTP_TIMEOUT:Long = config.getLong("application.httpserver.timeout")

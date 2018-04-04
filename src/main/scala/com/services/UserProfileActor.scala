@@ -18,7 +18,7 @@ class UserProfileActor extends Actor with ActorLogging {
 
   private def someRawData(msg: Message.UserProfileById): Map[String, String] = {
     var data: Map[String, String] = new HashMap();
-    data.+=(("userId", msg.userId), ("timestamp", new Date().toString()))
+    data.+=(("userId", msg.userId), ("timestamp", new Date().toString()), ("route", this.toString()))
     return data
   }
 

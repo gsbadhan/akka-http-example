@@ -13,7 +13,7 @@ import com.services.UserProfileService
 
 trait ServiceRouting extends RouteConcatenation {
   //initiate akka actor system
-  implicit val akkaSystem: ActorSystem = ActorSystem("my-akka", Configurations.config);
+  implicit val akkaSystem: ActorSystem = ActorSystem(Configurations.APP_NAME, Configurations.config);
   implicit val materializer = ActorMaterializer()
   implicit val executionContext = akkaSystem.dispatcher
   
