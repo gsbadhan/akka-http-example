@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonParser
 import scala.collection.mutable.Map
 import scala.collection.JavaConverters._
+import spray.json.JsObject
 
 object Response {
 
@@ -12,6 +13,8 @@ object Response {
       return toMapString(data.asInstanceOf[Map[String, String]]);
     } else if (data.isInstanceOf[String]) {
       return toJsonString(data.toString());
+    } else if (data.isInstanceOf[JsObject]) {
+      return data.toString();
     }
     return "";
   }
