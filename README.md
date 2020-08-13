@@ -10,6 +10,8 @@ sbt clean assembly
 ### skip test case while assembly:
 sbt 'set test in assembly := {}' clean assembly
 
+### run jar file:
+java -jar target/scala-2.12/akka-http-example-assembly-1.0.jar
 
 ## APIs:
 
